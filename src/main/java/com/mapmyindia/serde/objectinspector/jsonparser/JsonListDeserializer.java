@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Parses the JSON data into a list.
  *
- * @author shubham
+ * @author sbhTWR
  */
 
 public class JsonListDeserializer extends StdDeserializer<Object> {
