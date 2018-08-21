@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * @author shubham
+ * @author sbhTWR
  */
 
 public class JsonMapObjectInspector extends StandardMapObjectInspector {
