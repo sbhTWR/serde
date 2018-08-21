@@ -1,7 +1,7 @@
 package com.mapmyindia.serde.objectinspector;
 
 /**
- * @author shubham
+ * @author sbhTWR
  */
 
 public class CategoryNotFoundException extends Exception {
