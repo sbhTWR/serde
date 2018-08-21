@@ -14,7 +14,7 @@ import org.apache.hadoop.hive.serde2.objectinspector.StructField;
 import com.mapmyindia.serde.objectinspector.jsonparser.JsonStructDeserializer ;
 
 /**
- * @author shubham
+ * @author sbhTWR
  */
 
 public class JsonStructObjectInspector extends StandardStructObjectInspector {
@@ -38,17 +38,6 @@ public class JsonStructObjectInspector extends StandardStructObjectInspector {
     public Object getStructFieldData(Object data, StructField fieldRef) {
         if (JsonObjectInspectorUtils.checkObject(data) == null) return null ;
         MyField f = (MyField)fieldRef ;
-      //  if (!(data instanceof List<?>)) {
-            /* here struct of the form {} has to be treated, since it was nested in the main struct
-            *  and hence not parsed into a list
-            *
-            *  uncomment to enable cache
-            */
-       /* if (cache.containsKey(f.getFieldName())) {
-            //System.out.println("Cache accessed!") ;
-            return cache.get(f.getFieldName()) ;
-        }*/
-
             ObjectMapper customStructObjectMapper = new ObjectMapper() ;
             SimpleModule module1 = new SimpleModule("JsonStructDeserializer") ;
             module1.addDeserializer(Object.class, new JsonStructDeserializer(Object.class)) ;
