@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * Parses the JSON data into a map.
  *
- * @author shubham
+ * @author sbhTWR
  */
 
 public class JsonStructDeserializer extends StdDeserializer<Object> {
