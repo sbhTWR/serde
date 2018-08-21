@@ -65,9 +65,7 @@ public class JsonSerDe extends AbstractSerDe {
         assert(colNames.size()==colTypes.size()) ;
 
         rowTypeInfo = (StructTypeInfo) TypeInfoFactory.getStructTypeInfo(colNames, colTypes);
-        //*************************************************************************
-        //LEFT FOR LATER: initialize rowObjectInspector using JsonObjectInspector.
-        //*************************************************************************
+        
         try {
             rowObjectInspector =
                     (StructObjectInspector) JsonObjectInspectorFactory.getJsonObjectInspectorFromTypeInfo(rowTypeInfo);
@@ -97,44 +95,6 @@ public class JsonSerDe extends AbstractSerDe {
         Text jsonData = (Text)blob ;
         String txt = jsonData.toString() ;
         return txt ;
-       /* ObjectMapper ObjectMapper = new ObjectMapper() ;
-        List<java.lang.Object> row = new ArrayList<>(Collections.nCopies(colNames.size(), null));
-        try {
-            Map<String, Object>  jsonMap = ObjectMapper.readValue(txt, new TypeReference<java.lang.Object>(){});*/
-            // for testing purposes only.=========================================================
-
-            //=====================================================================================
-            // compare the column names if they are unequal , we set the corresponding field to null
-            /*for (Map.Entry<String, Object> entry : jsonMap.entrySet())
-            {
-                System.out.println("Key: " + entry.getKey() + "Value: " + entry.getValue()) ;
-            }*/
-
-
-           /*Iterator<String> it = colNames.iterator() ;
-           while (it.hasNext()) {
-               it.next() ;
-               if (jsonMap.containsKey(it.toString())) {
-                   row.add(jsonMap.get(it.toString())) ;
-               }
-           }*/
-
-          /* for (int i = 0 ; i<colNames.size() ; i++) {
-              if (jsonMap.containsKey(colNames.get(i))) {
-                  row.set(i,jsonMap.get(colNames.get(i))) ;
-               }
-           }*/
-
-            /*for (int i = 0; i < row.size() ; i++) {
-               System.out.println(row.get(i) + "<--") ;
-            }*/
-            //return row ;
-
-        /*} catch (IOException e) {
-            e.printStackTrace();
-            return null ;
-        }*/
-
     }
 
     @Override
