@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @author shubham
+ * @author sbhTWR
  */
 
 public class JsonListObjectInspector extends StandardListObjectInspector {
