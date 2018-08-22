@@ -1,2 +1,2 @@
 # serde
-Hive JSON deserializer built using jackson JSON library.
+ JSON deserializer for Apache Hive built using jackson JSON library.
